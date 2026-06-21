@@ -26,9 +26,35 @@ Project ID      : flask-oauth2-example-499919
 
 I chose "Enable APIs" and enabled all of them.
 
--> Go to https://concole.cloud.google.com/apis to create credentials.
+### Create and Download Google OAuth 2.0 Credentials
+- Go to https://console.cloud.google.com/apis to create credentials.
+- Choose 'Library'
+- Use search box to search for 'Gmail API'
+- Click on the Gmail API box ("Google Enterprise API)
+- Click "Enable" if not yet enabled, otherwise the button is "Manage"
+- Click "Create Credentials"
+- In 'Select an API' select 'Gmail API'
+- Choose 'User Data'
+- Click 'Next'
+- Fill in the form
+  - App name: Enter an app name of your choice (e.g., Pattie’s App).
+  - User support email: Select your email address from the choices provided.
+  - App logo: If you’d like, you can upload a logo for your app. This is optional.
+  - Developer Contact Info (your email address)
+- Click 'Save and Continue'
+- Skip over 'Scopes' and click 'Save and Continue'
+- In 'OAuth Client ID' fill in the form
+  - Application Type: Web Application
+  - Name: only used in the console for identification 
+- Skip 'Authorized Javascript Origins'
+- For 'Authorized Redirect URIs' use: http://localhost:5000/google/auth/
+- Click 'Create'
+- Download your credentials in JSON format and save them in a secure place...
 
-> *I think this app will need a **Service Account**...*
+
+
+
+> *I think this app will eventually need a **Service Account**...*
 
 ```
 Google API Scope for Sending Email from a Web App
