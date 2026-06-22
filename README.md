@@ -10,4 +10,7 @@ Example of learning to send OAuth2 email with Python.
 
 [Google Docs for using OAuth 2.0 for Web Sever Applications](https://developers.google.com/identity/protocols/oauth2/web-server)
 
-[WP Mail SMTP Auth Docs](https://wpmailsmtp.com/docs/how-to-set-up-the-gmail-mailer-in-wp-mail-smtp/)
+[WP Mail SMTP Auth Docs for Google](https://wpmailsmtp.com/docs/how-to-set-up-the-gmail-mailer-in-wp-mail-smtp/)
+
+[WP Mail SMTP Auth Docs for MS365/Outlook](https://wpmailsmtp.com/docs/how-to-set-up-the-outlook-mailer-in-wp-mail-smtp/)
+
