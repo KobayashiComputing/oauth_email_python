@@ -1,7 +1,7 @@
 # oauth_email_python
 Example of learning to send OAuth2 email with Python.
 
-## Some Blog Article
+## Some Interesting Blog Articles
 [OAuth with Flask](https://www.geeksforgeeks.org/python/oauth-authentication-with-flask-connect-to-google-twitter-and-facebook/)
 
 [OAuth 2.0 in Python: A Comprehensive Guide](https://coderivers.org/blog/oauth-20-python/)
