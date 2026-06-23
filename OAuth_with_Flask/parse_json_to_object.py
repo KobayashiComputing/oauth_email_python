@@ -3,7 +3,11 @@
 # Retrieved 2026-06-21, License - CC BY-SA 4.0
 
 import json
+import os
 from types import SimpleNamespace
+from dotenv import load_dotenv
+
+load_dotenv()
 
 try:
     # Read and parse JSON from file
