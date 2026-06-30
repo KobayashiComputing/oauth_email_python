@@ -30,6 +30,7 @@ def verify_google_id_token(token):
         # Token is invalid or expired
         raise ValueError(f"Invalid token: {e}")
 
+@app.route("/", methods=["GET", "POST"])
 @app.route("/auth/google", methods=["POST"])
 def google_auth():
     """
