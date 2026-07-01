@@ -7,7 +7,7 @@ This is great for quick testing or scripts running locally.
     - Supported account types: Accounts in any organizational directory and personal Microsoft accounts
     - Redirect URI: None needed for device code flow
     - API Permissions: Add Mail.Send (Delegated) and grant admin consent if needed.
-        - API Permissions -> Microsoft Graph -> Delegated -> search for "Mail.send"
+        - Manage -> API Permissions -> Add Permission -> Microsoft Graph -> Delegated -> search for "Mail.send"
     - Copy Client ID and Tenant ID.
 
 2. Install dependencies:

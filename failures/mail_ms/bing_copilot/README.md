@@ -39,6 +39,8 @@ Copy the Tenant ID to the .json file as well.
 
 {'error': 'invalid_client', 'error_description': "AADSTS7000218: The request body must contain the following parameter: 'client_assertion' or 'client_secret'. Trace ID: accd4427-566d-4521-847a-73b335524c00 Correlation ID: 34e19667-8492-4f4a-8142-972e7b74e80e Timestamp: 2026-06-30 21:30:18Z", 'error_codes': [7000218], 'timestamp': '2026-06-30 21:30:18Z', 'trace_id': 'accd4427-566d-4521-847a-73b335524c00', 'correlation_id': '34e19667-8492-4f4a-8142-972e7b74e80e', 'error_uri': 'https://login.microsoftonline.com/error?code=7000218'}
 
+{'error': 'invalid_client', 'error_description': "AADSTS7000218: The request body must contain the following parameter: 'client_assertion' or 'client_secret'. Trace ID: ea06d78b-2e48-44b3-ae7b-8286db346e00 Correlation ID: b200f556-e53e-4afb-86f5-fb83cbfd0fce Timestamp: 2026-07-01 18:48:12Z", 'error_codes': [7000218], 'timestamp': '2026-07-01 18:48:12Z', 'trace_id': 'ea06d78b-2e48-44b3-ae7b-8286db346e00', 'correlation_id': 'b200f556-e53e-4afb-86f5-fb83cbfd0fce', 'error_uri': 'https://login.microsoftonline.com/error?code=7000218'}
+
 
 ## Some places to look...
 Bing.com search with 'result = app.acquire_token_by_device_flow(flow)' provides an example, but the example looks like the code I already have.

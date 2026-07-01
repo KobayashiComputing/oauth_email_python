@@ -1,15 +1,54 @@
+import os
 import json
 import requests
-import msal
+from msal import PublicClientApplication
+from types import SimpleNamespace
+from dotenv import load_dotenv
+
+# ---------------- ENVIRONMENT ------------------
+pDirName = "oauth_email_python"
+eDirName = "env"
+sDir = os.path.dirname(os.path.abspath(__file__))
+eDirNdx = sDir.find(pDirName) + len(pDirName)
+eDir = sDir[0:eDirNdx] + "/" + eDirName
+
+# Token is cached for reuse  
+token_path = os.path.join(eDir, 'outlook_token_cache_02.json')
+
+# Outlook.com Azure tenant info file
+tenant_info_path = os.path.join(eDir, 'ms_desktop_client_02.json')
+
+load_dotenv()
+
+obj = SimpleNamespace()
+
+try:
+    # Read and parse JSON from file
+    with open(tenant_info_path, "r") as f:
+        obj = json.load(f, object_hook=SimpleNamespace)
+except FileNotFoundError:
+    print("File not found.")
+    exit(1)
+except json.JSONDecodeError as e:
+    print("Error parsing JSON file:", e)
+    exit(1)
+except Exception as e:
+    print("Unexpected error:", e)
+    exit(1)
+
+print("\nParsed from file as well:")
+print("     Tenant ID: ", obj.installed.tenant_id)
+print("     Client ID: ", obj.installed.client_id)
+
 
 # ---------------- CONFIGURATION ----------------
-CLIENT_ID = "YOUR_CLIENT_ID"       # From Azure App Registration
-TENANT_ID = "YOUR_TENANT_ID"       # From Azure App Registration
+CLIENT_ID = obj.installed.client_id     # From Azure App Registration
+TENANT_ID = obj.installed.tenant_id     # From Azure App Registration
 AUTHORITY = f"https://login.microsoftonline.com/{TENANT_ID}"
 SCOPES = ["https://graph.microsoft.com/Mail.Send"]
 
 # Create a public client application (no secret needed for device code flow)
-app = msal.PublicClientApplication(CLIENT_ID, authority=AUTHORITY)
+app = PublicClientApplication(CLIENT_ID, authority=AUTHORITY)
 
 # Step 1: Get device code
 flow = app.initiate_device_flow(scopes=SCOPES)
