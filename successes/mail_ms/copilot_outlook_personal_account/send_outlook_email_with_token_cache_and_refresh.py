@@ -6,7 +6,8 @@ import os
 from dotenv import load_dotenv
 
 localDirPath = os.path.dirname(os.path.abspath(__file__))
-envFilePath = localDirPath + "/" +".env"
+envPath = localDirPath + "/env"
+envFilePath = envPath + "/" +".env"
 load_dotenv(dotenv_path=envFilePath)
 
 # ----------------------------
@@ -16,7 +17,7 @@ CLIENT_ID = os.getenv('CLIENT_ID')  # From Azure App Registration
 TENANT_ID = "consumers"  # For personal Microsoft accounts
 AUTHORITY = f"https://login.microsoftonline.com/{TENANT_ID}"
 SCOPES = ["https://graph.microsoft.com/Mail.Send"]
-TOKEN_CACHE_FILE = localDirPath + "/" + "msal_cache.json"
+TOKEN_CACHE_FILE = envPath + "/" + "msal_cache.json"
 
 # ----------------------------
 # Load MSAL token cache from file

@@ -17,6 +17,7 @@ Below is a complete, runnable Python script that:
     - Supported account types: Accounts in any organizational directory and personal Microsoft accounts.
     - Redirect URI: Leave blank for device code flow.
     - Save the Application (client) ID — put it in CLIENT_ID.
+    - Note: for "personal" accounts, the TENANT_ID is "consumers"
 
 2. API Permissions
     - In your app → API Permissions → Add a permission → Microsoft Graph → Delegated permissions → Mail.Send.
@@ -25,17 +26,11 @@ Below is a complete, runnable Python script that:
 3. Allow public client flows
     - Go to your App Registration in Azure Portal
     - Azure Active Directory → App registrations → Select your app.
-
-    - Enable Public Client Flow
-
-    - In the left menu, go to Authentication.
-    - Scroll to Advanced settings → Allow public client flows.
-    - Set Enable the following mobile and desktop flows to Yes.
+    - Authentication -> Advanced Settings (needs legacy mode) -> Allow public client flows -> Enable Mobile and Desktop
     - Save.
     - Ensure Supported Account Types
-
-    - In Overview, make sure your app is set to:
-        - Accounts in any organizational directory and personal Microsoft accounts.
+        - In Overview, make sure your app is set to:
+            - Accounts in any organizational directory and personal Microsoft accounts.
     - Permissions
         - API Permissions → Add Microsoft Graph → Delegated → Mail.Send.
         - Click Grant admin consent (if available).

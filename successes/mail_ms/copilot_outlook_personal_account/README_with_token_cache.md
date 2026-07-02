@@ -39,6 +39,7 @@ Updated Python Script — Outlook.com Email with Auto Token Refresh
     - Supported account types: Accounts in any organizational directory and personal Microsoft accounts.
     - Redirect URI: Leave blank for device code flow.
     - Save the Application (client) ID — put it in CLIENT_ID.
+    - Note: for "personal" accounts, the TENANT_ID is "consumers"
 
 2. API Permissions
     - In your app → API Permissions → Add a permission → Microsoft Graph → Delegated permissions → Mail.Send.
@@ -69,7 +70,7 @@ pip install msal requests
 
 5. Run the Script
 ```
-python send_outlook_email.py
+python send_outlook_email_with_token_cache_and_refresh.py
 ```
 
 - First run: prompts for device code login.

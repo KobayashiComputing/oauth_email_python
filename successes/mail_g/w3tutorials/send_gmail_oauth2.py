@@ -11,6 +11,13 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
+from dotenv import load_dotenv
+
+localDirPath = os.path.dirname(os.path.abspath(__file__))
+envPath = localDirPath + "/env"
+envFilePath = envPath + "/" +".env"
+load_dotenv(dotenv_path=envFilePath)
+
 
 # If modifying these SCOPES, delete the file token.json.
 SCOPES = ['https://www.googleapis.com/auth/gmail.send']
@@ -18,7 +25,8 @@ SCOPES = ['https://www.googleapis.com/auth/gmail.send']
 def get_creds():
     sDir = os.path.dirname(os.path.abspath(__file__))
     # Token is cached in a pickle file for reuse  
-    token_path = os.path.join(sDir, '../../../env/token.pickle')
+    # token_path = os.path.join(sDir, '../../../env/token.pickle')
+    token_path = envPath + "/" + "token.pickle"
 
     with open(token_path, 'rb') as token:  
         creds = pickle.load(token)  

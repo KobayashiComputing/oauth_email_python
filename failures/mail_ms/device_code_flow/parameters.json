@@ -1,6 +1,0 @@
-{
-    "authority": "https://login.microsoftonline.com/common",
-    "client_id": "9dc2f685-e31b-41f3-ac7e-9f7cdb8bc8fc",
-    "scope": ["User.Read"],
-    "endpoint": "https://graph.microsoft.com/v1.0/me"
-}

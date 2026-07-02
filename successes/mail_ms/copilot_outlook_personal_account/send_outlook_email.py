@@ -5,7 +5,9 @@ import sys
 import os
 from dotenv import load_dotenv
 
-envFilePath = os.path.dirname(os.path.abspath(__file__)) + "/.env"
+localDirPath = os.path.dirname(os.path.abspath(__file__))
+envPath = localDirPath + "/env"
+envFilePath = envPath + "/" +".env"
 load_dotenv(dotenv_path=envFilePath)
 
 # -------------------------------
