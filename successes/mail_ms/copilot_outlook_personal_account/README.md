@@ -22,12 +22,30 @@ Below is a complete, runnable Python script that:
     - In your app → API Permissions → Add a permission → Microsoft Graph → Delegated permissions → Mail.Send.
     - Click Grant admin consent (if available).
 
-3. Install Required Libraries
+3. Allow public client flows
+    - Go to your App Registration in Azure Portal
+    - Azure Active Directory → App registrations → Select your app.
+
+    - Enable Public Client Flow
+
+    - In the left menu, go to Authentication.
+    - Scroll to Advanced settings → Allow public client flows.
+    - Set Enable the following mobile and desktop flows to Yes.
+    - Save.
+    - Ensure Supported Account Types
+
+    - In Overview, make sure your app is set to:
+        - Accounts in any organizational directory and personal Microsoft accounts.
+    - Permissions
+        - API Permissions → Add Microsoft Graph → Delegated → Mail.Send.
+        - Click Grant admin consent (if available).
+
+4. Install Required Libraries
 ```
 pip install msal requests
 ```
 
-4. Run the Script
+5. Run the Script
 ```
 python send_outlook_email.py
 ```

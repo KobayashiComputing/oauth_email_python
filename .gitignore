@@ -1,3 +1,6 @@
+# project related files
+msal_cache.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -150,6 +153,7 @@ activemq-data/
 
 # Environments
 .env
+.env.bak
 .envrc
 .venv
 .venv.*/

@@ -2,11 +2,16 @@ import msal
 import requests
 import json
 import sys
+import os
+from dotenv import load_dotenv
+
+envFilePath = os.path.dirname(os.path.abspath(__file__)) + "/.env"
+load_dotenv(dotenv_path=envFilePath)
 
 # -------------------------------
 # CONFIGURATION - EDIT THESE
 # -------------------------------
-CLIENT_ID = "[REDACTED - get from .env file]"  # From Azure App Registration
+CLIENT_ID = os.getenv('CLIENT_ID')  # From Azure App Registration
 TENANT_ID = "consumers"  # 'consumers' for personal Outlook.com accounts
 AUTHORITY = f"https://login.microsoftonline.com/{TENANT_ID}"
 SCOPES = ["https://graph.microsoft.com/Mail.Send"]
@@ -40,7 +45,7 @@ def get_access_token():
     print(f"Go to {flow['verification_uri']} and enter the code: {flow['user_code']}")
     sys.stdout.flush()
 
-    result = app.acquire_token_by_device_flow(flow)
+    result = app.acquire_token_by_device_flow(flow)     # this blocks until a return is received
     if "access_token" in result:
         return result["access_token"]
     else:
